@@ -1,0 +1,14 @@
+{
+  "name": "usability-test-dashboard",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Usability Test Dashboard — Proyecto IHC, Universidad Técnica de Ambato, Grupo 6",
+  "packageManager": "pnpm@12.9.1",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}
