@@ -30,5 +30,33 @@ services:
       timeout: 5s
       retries: 10
 
+  # Perfil demo: `docker compose --profile demo up --build`.
+  # Datos de ejemplo: `docker compose --profile demo run --rm api pnpm --filter @utd/api db:seed`.
+  api:
+    profiles: [demo]
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://utd:utd@db:5432/utd
+      WEB_ORIGIN: http://localhost:8080
+      API_PORT: '3000'
+      AI_PROVIDER: mock
+    ports:
+      - '3000:3000'
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    profiles: [demo]
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - '8080:80'
+    depends_on:
+      - api
+
 volumes:
   pgdata:
