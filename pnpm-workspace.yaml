@@ -11,3 +11,5 @@ allowBuilds:
   '@swc/core': false
   esbuild: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - vite@8.3.3
