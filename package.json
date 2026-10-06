@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
-    "typecheck": "pnpm -r --if-present typecheck",
+    "typecheck": "pnpm --filter @utd/shared build && pnpm -r --if-present typecheck",
     "test": "pnpm -r --if-present test",
     "build": "pnpm -r --if-present build"
   },
