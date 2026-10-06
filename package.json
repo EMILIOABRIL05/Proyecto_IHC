@@ -8,13 +8,16 @@
     "node": ">=24"
   },
   "scripts": {
+    "predev": "pnpm --filter @utd/shared build",
+    "dev": "pnpm -r --parallel --if-present dev",
+    "build": "pnpm -r --if-present build",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "prepare": "husky",
     "typecheck": "pnpm --filter @utd/shared build && pnpm -r --if-present typecheck",
     "test": "pnpm -r --if-present test",
-    "build": "pnpm -r --if-present build"
+    "test:e2e": "pnpm --filter @utd/api test:e2e",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "21.2.3",
