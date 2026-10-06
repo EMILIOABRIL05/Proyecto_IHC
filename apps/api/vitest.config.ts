@@ -20,6 +20,7 @@ export default defineConfig({
         'src/main.ts',
         'src/app.factory.ts',
         'src/config/load-env-file.ts',
+        'src/prisma/**',
         'src/generated/**',
       ],
       thresholds: { lines: 70, branches: 70 },

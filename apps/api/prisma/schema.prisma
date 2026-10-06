@@ -1,29 +1,3 @@
-# Modelo de datos
-
-Base de datos: **PostgreSQL 17** con **Prisma**. Diagrama ER: [`diagrams/02-entidad-relacion.md`](diagrams/02-entidad-relacion.md).
-
-## Convenciones
-
-- Modelos Prisma en `PascalCase` singular; tablas en `snake_case` plural con `@@map`; columnas en
-  `snake_case` con `@map`.
-- IDs `String @id @default(uuid())`.
-- Todas las tablas: `createdAt` y `updatedAt` (`@updatedAt`), en UTC. La interfaz muestra fechas en
-  `America/Guayaquil`.
-- Enums en inglés (`UPPER_SNAKE`); la interfaz los traduce (`apps/web/src/lib/labels.ts`).
-- Borrado: físico solo en borradores (tareas de un plan sin sesiones, evidencias de sesiones abiertas,
-  observaciones de sesiones abiertas). Lo demás cambia de estado.
-- **El esquema completo se crea en la migración inicial (DI-04).** Si una HU necesita cambiarlo: una
-  migración nueva por PR, con nombre descriptivo (`pnpm prisma migrate dev --name add_x`), nunca se
-  edita una migración ya fusionada.
-- Integridad que Prisma no expresa (por ejemplo `severity` entre 0 y 4) se valida con Zod en
-  `packages/shared` y, cuando es crítica, con un `CHECK` en una migración SQL.
-
-## Esquema de referencia (`apps/api/prisma/schema.prisma`)
-
-> Es la referencia para DI-04. Los nombres de modelos, campos y enums son el contrato: si cambias uno,
-> actualiza este documento en el mismo PR.
-
-```prisma
 // Prisma 7: la URL de conexión NO va aquí; se define en apps/api/prisma.config.ts
 // y el cliente se crea con el adaptador @prisma/adapter-pg (ver ARCHITECTURE.md §4).
 generator client {
@@ -430,20 +404,3 @@ model Retrospective {
 
   @@map("retrospectives")
 }
-```
-
-## Notas de diseño
-
-- **Una sesión por participante** (`participantId @unique`): el código `P-xxx` identifica la sesión en
-  la interfaz.
-- Al crear una sesión se crean sus `TaskResult` (uno por tarea, `outcome = null`) en la misma
-  transacción: así "pendiente" es explícito y RN-05 es un simple conteo.
-- `TaskResult.task` usa `onDelete: Restrict`: no se puede borrar una tarea con resultados (refuerza RN-04).
-- Código MX = `MX-` + `number` con 3 dígitos. `autoincrement` garantiza unicidad y no reutilización
-  (RN-19). El seed ajusta la secuencia para empezar las historias demo en MX-008.
-- `rank` usa saltos de 1000 para reordenar sin renumerar todo; se normaliza si dos quedan contiguos.
-- `Finding.severity` y los 10 valores de `susAnswers` se validan con Zod; además se agregan `CHECK`
-  (`severity BETWEEN 0 AND 4`) en una migración SQL de DI-04.
-- La comparación (HU-12) y el informe (HU-11) **no se guardan**: se calculan al vuelo con `shared/domain`.
-- Las acciones del cronómetro (`start`/`pause`/`reset`) son endpoints propios (RN-08) que usan el reloj
-  del servidor.
