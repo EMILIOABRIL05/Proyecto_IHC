@@ -76,18 +76,18 @@ Eres el dueño de HU-03. (2) HU-04 "probar flujo integral": escribe primero los 
 HU-01..HU-04 (docs/TESTING.md §3) y al final ejecuta el flujo T1 y corrige los fallos de registro.
 ```
 
-**Jonathan — HU-01 formulario (10 h) y HU-03 evidencias (8 h) + GitHub:**
+**Jonathan — HU-01 formulario (10 h) y HU-03 evidencias (8 h):**
 ```text
-Soy Jonathan Gamboa (Developer y admin del repo). Sprint 2. (1) Antes del primer PR, deja listo GitHub según
-docs/BACKLOG.md DI-04 (último punto): develop por defecto, protecciones, etiquetas y GitHub Project; dime los
-pasos manuales que yo deba hacer en la web. (2) HU-01 "formulario guiado para configurar planes y tareas",
-con la equivalenceKey; RN-01, RN-02, RN-04, RN-16. Eres el dueño de HU-01 (Closes #n). (3) HU-03 "carga de
+Soy Jonathan Gamboa (Developer). Sprint 2. (1) HU-01 "formulario guiado para configurar planes y tareas",
+con la equivalenceKey; RN-01, RN-02, RN-04, RN-16. Eres el dueño de HU-01 (Closes #n). (2) HU-03 "carga de
 evidencias con validación" (RN-15). Un PR por línea.
 ```
 
-**Emilio — HU-02 ejecución (10 h) y HU-04 formularios (8 h):**
+**Emilio — HU-02 ejecución (10 h) y HU-04 formularios (8 h) + GitHub:**
 ```text
-Soy Emilio Abril (Developer). Sprint 2. (1) HU-02 "ejecución de tareas y captura de observaciones": la pantalla
+Soy Emilio Abril (Developer y admin del repo). Sprint 2. (0) Antes del primer PR, deja listo GitHub según
+docs/BACKLOG.md DI-04 (último punto): develop por defecto, protecciones, etiquetas y GitHub Project; dime los
+pasos manuales que yo deba hacer en la web. (1) HU-02 "ejecución de tareas y captura de observaciones": la pantalla
 de ejecución con cronómetro, resultado, errores y observaciones, sobre los endpoints de Manuel. Eres el dueño de
 HU-02. Presta atención a RN-08, RN-21 y a los riesgos D1–D4 de docs/RISKS.md. (2) HU-04 "estados, errores y
 accesibilidad básica de formularios" en HU-01 y HU-02 (docs/TESTING.md §5). Mientras la raíz de Manuel no esté

@@ -12,8 +12,8 @@ cuenta **5 desarrolladores**: todos programan, cada uno con su agente de código
 
 | Integrante | Rol formal | Responsabilidad extra (además de programar) |
 |---|---|---|
-| **Emilio Abril** | Developer | Revisar la arquitectura y la estructura del monorepo, `packages/shared/src/domain`, mantener `develop` en verde, resolver conflictos de integración. |
-| **Jonathan Gamboa** | Developer | **Administrador del repositorio** (es el dueño en GitHub): ramas protegidas, colaboradores, GitHub Projects, etiquetas, CI, releases y tags. Revisa cambios de contratos compartidos. |
+| **Emilio Abril** | Developer | **Administrador del repositorio** (es el dueño en GitHub): ramas protegidas, colaboradores, GitHub Projects, etiquetas, CI, releases y tags. Revisar la arquitectura y la estructura del monorepo, `packages/shared/src/domain`, mantener `develop` en verde, resolver conflictos de integración. |
+| **Jonathan Gamboa** | Developer | Revisa cambios de contratos compartidos. |
 | **William Martínez** | QA | Dueño de `TESTING.md` y de la calidad: umbrales de cobertura, revisión de accesibilidad (axe + teclado + lector de pantalla), **visto bueno de QA** en cada rama `release/*`, triaje de bugs. Integración continua y estructura de UI (DI-05, dentro de su línea de HU-01). |
 | **Pablo Lozada** | Tester | Esquema de BD y seed (su línea de HU-03). Escribe los **casos de prueba de aceptación** de cada HU; pruebas exploratorias; conduce las pruebas de usabilidad con personas (antes y después). |
 | **Manuel Cusme** | Tester + **Scrum Master** | Ceremonias (planning, review, retro), tablero del proyecto, actas en `docs/sprints/`, **matriz de planificación de horas**, informe final; casos de prueba y reportes de bugs. Raíz del monorepo y Docker (su línea de HU-01). |
@@ -54,8 +54,8 @@ El dueño revisa con prioridad los PR que tocan su módulo y decide sobre cambio
 | Raíz del monorepo, Docker, `apps/api` (endpoints de `sessions`, `results`, `ai`, `improvements`), `docs/` | Manuel | Pablo |
 | BD: `apps/api/prisma`, persistencia de backlog y de review/retro, comparación | Pablo | Manuel |
 | `apps/web` base (rutas, `components/ui`, layout, accesibilidad), CI, prompt y esquema de IA, métricas, `export` | William | Emilio |
-| `sessions` (web: ejecución), backlog MX (web), review y retro (web), filtros del dashboard, `packages/shared/src/domain` | Emilio | William |
-| GitHub (ramas, Projects), `plans` (web), `evidence`, `ai-review` (web), tablero de `improvements` (web) | Jonathan | Emilio |
+| GitHub (ramas, Projects), `sessions` (web: ejecución), backlog MX (web), review y retro (web), filtros del dashboard, `packages/shared/src/domain` | Emilio | William |
+| `plans` (web), `evidence`, `ai-review` (web), tablero de `improvements` (web) | Jonathan | Emilio |
 
 ## 4. Asignación por sprint (tareas de la matriz)
 
@@ -83,7 +83,7 @@ fusionarse) lleva `Closes #n`; los demás usan `Refs #n`. Las líneas se ordenan
 | HU-04 | **Emilio** (dueño) | Añadir estados, errores y accesibilidad básica a formularios | 8 | Depende de los formularios de HU-01 y HU-02 |
 | HU-04 | Pablo | Probar flujo integral y corregir fallos de registro | 8 | Casos de aceptación desde el día 1; flujo al final |
 
-Jonathan, como admin del repo, también deja listo `develop`, las protecciones, las etiquetas y el
+Emilio, como admin del repo, también deja listo `develop`, las protecciones, las etiquetas y el
 GitHub Project antes del primer PR (no suma horas de la matriz). Si Manuel se retrasa con la raíz, Emilio
 apoya (tiene 2 h de holgura).
 

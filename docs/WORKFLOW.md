@@ -19,7 +19,7 @@ Nombres en minúsculas, palabras con guion, sin tildes ni ñ: `feature/HU-02-cro
 
 **Versiones:** fin de S2 → `v0.2.0`, fin de S3 → `v0.3.0`, fin de S4 → `v1.0.0`. Hotfix → `v0.2.1`.
 
-### Protección (configura Jonathan en DI-04)
+### Protección (la configura Emilio, admin del repo, en DI-04)
 - `main` y `develop`: PR obligatorio, 1 aprobación, CI en verde, rama actualizada antes de fusionar, sin
   push directo ni force-push, sin borrar.
 - Tipo de fusión permitido: **merge commit** (conserva los commits atómicos). Squash y rebase-merge
