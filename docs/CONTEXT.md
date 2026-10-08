@@ -8,7 +8,7 @@
 | Product Owner | Ing. José Caiza, Mg. |
 | Scrum Master | Manuel Cusme |
 | Período | Julio – Diciembre 2026 (Sprints 1–4: 16 sep – 16 nov 2026, según la matriz del grupo) |
-| Repositorio | https://github.com/Jonathan305g/Proyecto_IHC |
+| Repositorio | https://github.com/EMILIOABRIL05/Proyecto_IHC |
 | Prototipo (Figma) | [Usability Test Dashboard con IA y Scrum — Prototipo navegable](https://www.figma.com/design/ivPHjdwRsm1rR2fL8mYDmQ/Usability-Test-Dashboard-con-IA-y-Scrum-%E2%80%94-Prototipo-navegable?node-id=0-1) |
 
 ## 1. Visión del producto
