@@ -49,7 +49,7 @@ primero la raíz, después lo demás en paralelo.
 | HU-01 "Preparar NestJS, contratos de datos y validación de entrada" | Manuel | Raíz del monorepo, `tsconfig`, ESLint/Prettier, Husky/commitlint, `packages/shared`, `apps/api` base, `docker-compose.yml`, `.env.example`, scripts raíz |
 | HU-01 "Preparar estructura React, rutas y componentes del flujo" | William | `apps/web` base (Vite, Tailwind, shadcn, Router, Query, Vitest/axe, Playwright), `ci.yml` y todo **DI-05** |
 | HU-03 "Diseñar base de datos para planes, sesiones y evidencias" | Pablo | Esquema Prisma completo, migración inicial y seed |
-| Responsabilidad de admin del repo (sin horas de la matriz) | Jonathan | Último punto de GitHub: `develop`, protecciones, etiquetas, Project |
+| Responsabilidad de admin del repo (sin horas de la matriz) | Emilio | Último punto de GitHub: `develop`, protecciones, etiquetas, Project |
 
 Si la parte de Manuel se retrasa, Emilio (que no tiene línea de base) apoya con la raíz.
 
@@ -65,7 +65,7 @@ completa lo que falta y registra sus horas reales en la matriz. Las horas que Em
 | **A** `chore/DI-04-raiz` | HU-01 · **Manuel** — Preparar NestJS, contratos de datos y validación de entrada (8 h) | Monorepo pnpm, `tsconfig` estricto, ESLint/Prettier/Husky/commitlint, `packages/shared` (con el esquema y los códigos de error de la API), `apps/api` base (`/health`, Swagger, filtro de errores, `ZodValidationPipe`, configuración validada), Docker de la BD, `.env.example`, scripts raíz | **Contratos de datos de HU-01** (esquemas Zod del plan y de las tareas en `packages/shared/src/schemas`), **validación de entrada** con esos esquemas y el módulo `plans` de la API. Revisar el PR A |
 | **B** `feature/HU-03-bd` | HU-03 · **Pablo** — Diseñar base de datos para planes, sesiones y evidencias (10 h) | Esquema Prisma completo de `DATA_MODEL.md`, migración inicial con `CHECK`, `PrismaService`, seed idempotente del caso demo, scripts `db:*` | **Revisar y validar el esquema** contra planes, sesiones y evidencias; cambios nuevos solo con una migración nueva; comprobar con un clon limpio que `db:migrate` y `db:seed` funcionan. Revisar el PR B |
 | **C** `feature/HU-01-estructura-web` | HU-01 · **William** — Preparar estructura React, rutas y componentes del flujo (8 h) | `apps/web` base (Vite, Tailwind, shadcn inicializado, Router, TanStack Query, `api-client`, Vitest + axe, Playwright), perfil Docker `demo`, `ci.yml`, README | **Todo DI-05**: layout, navegación lateral de 5 áreas, tokens del Figma con contraste AA calculado, componentes base, página `/design` y rutas vacías de `HCI_DESIGN.md` §3; además `docs/testing/a11y-checklist.md`. Revisar el PR C |
-| GitHub | **Jonathan** (admin del repo, sin horas de la matriz) | La rama `develop` ya existe | Dejarla como rama por defecto, proteger `main` y `develop`, etiquetas, GitHub Project y un Issue por HU |
+| GitHub | **Emilio** (admin del repo, sin horas de la matriz) | La rama `develop` ya existe | Dejarla como rama por defecto, proteger `main` y `develop`, etiquetas, GitHub Project y un Issue por HU |
 
 Los PR llevan `Refs #n`: el Issue de HU-01 y el de HU-03 los cierra el dueño de cada HU (Jonathan y Pablo)
 al fusionar su última línea (ver [`TEAM.md`](TEAM.md) §4).
@@ -93,7 +93,7 @@ Checklist (cada punto es un commit `chore`/`ci`/`build` o `feat(db)`):
       `db:seed`, `db:reset`, `db:studio`.
 - [ ] `.env.example` documentado (ver `ARCHITECTURE.md` §7). `.env` en `.gitignore`.
 - [ ] `.github/workflows/ci.yml` (ver `TESTING.md` §6).
-- [ ] **Jonathan (admin GitHub):** crear rama `develop` y ponerla por defecto; proteger `main` y `develop`
+- [ ] **Emilio (admin GitHub):** crear rama `develop` y ponerla por defecto; proteger `main` y `develop`
       (PR obligatorio, 1 aprobación, CI verde, sin push directo); activar *secret scanning*; crear
       etiquetas (`HU-01`…`HU-13`, `DI-04`, `DI-05`, `sprint-2/3/4`, `tipo:feat|fix|docs|test|chore`,
       `bug`, `bloqueado`); crear el GitHub Project con columnas To Do / In Progress / Review / Done; crear
