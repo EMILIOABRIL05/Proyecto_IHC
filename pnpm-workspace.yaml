@@ -4,6 +4,8 @@ packages:
 # Scripts de instalación permitidos (pnpm bloquea el resto por seguridad).
 allowBuilds:
   '@parcel/watcher': true
+  '@prisma/engines': true
+  prisma: true
   '@scarf/scarf': false
   # Binario nativo que no se usa; no se ejecuta su instalación.
   '@swc/core': false

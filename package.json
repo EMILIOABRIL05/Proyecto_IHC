@@ -17,7 +17,11 @@
     "test:e2e": "pnpm --filter @utd/api test:e2e",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "db:migrate": "pnpm --filter @utd/api db:migrate",
+    "db:seed": "pnpm --filter @utd/api db:seed",
+    "db:reset": "pnpm --filter @utd/api db:reset",
+    "db:studio": "pnpm --filter @utd/api db:studio"
   },
   "devDependencies": {
     "@commitlint/cli": "21.2.3",
