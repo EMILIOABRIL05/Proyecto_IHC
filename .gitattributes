@@ -1,0 +1,12 @@
+# Normaliza fines de línea a LF para evitar diferencias entre Windows, Linux y macOS
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
